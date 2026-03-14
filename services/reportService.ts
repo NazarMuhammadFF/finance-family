@@ -27,7 +27,10 @@ export async function getFamilyReport(familyId: string): Promise<FamilyReport> {
     { income: 0, expense: 0 },
   );
 
-  return { ...totals, net: totals.income - totals.expense } satisfies FamilyReport;
+  return {
+    ...totals,
+    net: totals.income - totals.expense,
+  } satisfies FamilyReport;
 }
 
 export async function getRecentActivity(

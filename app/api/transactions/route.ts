@@ -21,7 +21,10 @@ export async function GET(request: Request) {
     const data = await listTransactions(familyId);
     return NextResponse.json({ data });
   } catch (error) {
-    return NextResponse.json({ error: (error as Error).message }, { status: 500 });
+    return NextResponse.json(
+      { error: (error as Error).message },
+      { status: 500 },
+    );
   }
 }
 
@@ -31,7 +34,10 @@ export async function POST(request: Request) {
     const created = await createTransaction(body);
     return NextResponse.json({ data: created }, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ error: (error as Error).message }, { status: 500 });
+    return NextResponse.json(
+      { error: (error as Error).message },
+      { status: 500 },
+    );
   }
 }
 
@@ -50,6 +56,9 @@ export async function DELETE(request: Request) {
     const deleted = await deleteTransaction(id);
     return NextResponse.json({ data: deleted });
   } catch (error) {
-    return NextResponse.json({ error: (error as Error).message }, { status: 500 });
+    return NextResponse.json(
+      { error: (error as Error).message },
+      { status: 500 },
+    );
   }
 }
