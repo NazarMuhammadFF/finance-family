@@ -1,7 +1,9 @@
 import { supabase } from "@/lib/supabase";
 import type { NewTransaction, Transaction } from "@/types/transaction";
 
-export async function listTransactions(familyId: string): Promise<Transaction[]> {
+export async function listTransactions(
+  familyId: string,
+): Promise<Transaction[]> {
   const { data, error } = await supabase
     .from("transactions")
     .select("*")
@@ -25,7 +27,9 @@ export async function createTransaction(
   return data as Transaction;
 }
 
-export async function deleteTransaction(id: string): Promise<Transaction | null> {
+export async function deleteTransaction(
+  id: string,
+): Promise<Transaction | null> {
   const { data, error } = await supabase
     .from("transactions")
     .delete()

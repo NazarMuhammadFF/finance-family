@@ -1,0 +1,1 @@
+-- Placeholder: Add Supabase row-level security policies to protect family data.

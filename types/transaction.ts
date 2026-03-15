@@ -12,4 +12,7 @@ export interface Transaction {
   updated_at?: string;
 }
 
-export type NewTransaction = Omit<Transaction, "id" | "created_at" | "updated_at">;
+export type NewTransaction = Omit<
+  Transaction,
+  "id" | "created_at" | "updated_at"
+>;
